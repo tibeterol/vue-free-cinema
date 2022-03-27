@@ -1,6 +1,6 @@
 <template>
    <footer>
-        <p class="copyrights">&copy; 2022 Tibet Erol</p>
+        <p class="copyrights">&copy; 2022 <a href="https://tibeterol.me" target="blank">Tibet Erol</a></p>
     </footer>
 </template>
 

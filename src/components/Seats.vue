@@ -124,8 +124,12 @@ export default {
     },
     methods : {
         selectSeat(idx){
-            if(!this.seatIds.includes(idx))
-            this.seatIds.push(idx);
+            if(!this.seatIds.includes(idx)){
+              this.seatIds.push(idx);
+            }
+            else{
+              this.seatIds = this.seatIds.filter(s=>s!==idx);
+            }
             console.log(this.seatIds);
             if(idx ==='A1')
             this.isSeatA1Selected = !this.isSeatA1Selected;

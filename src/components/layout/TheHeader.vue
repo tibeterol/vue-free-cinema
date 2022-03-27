@@ -8,8 +8,9 @@
 
 				<nav>
 					<a href="#">Movies</a>
+					<a href="#">Form</a>
 					<a href="#" class="selected">Get Ticket</a>
-					<a href="#">Contact</a>
+					<a href="#">Admin Login</a>
 				</nav>
 			</div>
 
@@ -100,7 +101,6 @@
 	.header-basic .header-limiter nav a {
 		font-size: 13px;
 	}
-
 }
 
 /* For the headers to look good, be sure to reset the margin and padding of the body */
