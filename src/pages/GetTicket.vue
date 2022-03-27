@@ -1,7 +1,10 @@
 <template>
+ <div id="text">
+     <h3>Choose Your Seats</h3>
+ </div>
     <div id="ticket-container"> 
   <div class="movie-container">
-      <label>Pick a movie:</label>
+      <label>Selected movie : </label>
       <select id="movie">
         <option value="10">Avengers: Endgame ($10)</option>
         <option value="12">Joker ($12)</option>
@@ -75,4 +78,15 @@ p.text {
 p.text span {
   color: #6feaf6;
 } 
+
+
+#text {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  padding: 1rem;
+  margin: 2rem auto;
+  max-width: 40rem;
+  background-color : #5383D3;
+  border-radius: 10px;
+  box-shadow: 3px 5px #888888;
+}
 </style>

@@ -1,8 +1,8 @@
 <template>
 <the-header></the-header>
 <get-ticket v-if="1===2"></get-ticket>
-<select-movie v-if="1===2"></select-movie>
 <user-form></user-form>
+<select-movie v-if="1===2"></select-movie>
 <the-footer></the-footer>
 </template>
 
