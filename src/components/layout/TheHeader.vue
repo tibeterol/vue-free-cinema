@@ -4,14 +4,11 @@
 
 			<div class="header-limiter">
 
-				<h1><a href="#">Company<span>logo</span></a></h1>
+				<h1><a href="#">Free<span>Cinema</span></a></h1>
 
 				<nav>
-					<a href="#">Home</a>
-					<a href="#" class="selected">Blog</a>
-					<a href="#">Pricing</a>
-					<a href="#">About</a>
-					<a href="#">Faq</a>
+					<a href="#">Movies</a>
+					<a href="#" class="selected">Get Ticket</a>
 					<a href="#">Contact</a>
 				</nav>
 			</div>

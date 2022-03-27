@@ -124,6 +124,7 @@ export default {
     },
     methods : {
         selectSeat(idx){
+            if(!this.seatIds.includes(idx))
             this.seatIds.push(idx);
             console.log(this.seatIds);
             if(idx ==='A1')
