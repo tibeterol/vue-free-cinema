@@ -1,5 +1,6 @@
 <template>
 <the-header></the-header>
+<div id="ticket-container"> 
   <div class="movie-container">
       <label>Pick a movie:</label>
       <select id="movie">
@@ -22,7 +23,7 @@
         >0</span
       >
     </p>
-
+</div>
 </template>
 
 
@@ -56,6 +57,10 @@ export default {
 body {
   background-color: #242333;
   color: #fff;
+}
+#ticket-container{
+    background-color: #242333;
+  color: #fff;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -63,7 +68,6 @@ body {
   height: 100vh;
   font-family: 'Lato', sans-serif;
   margin: 0;
-	padding:0; /*yeni*/ 
 }
 
 .movie-container {
@@ -93,5 +97,5 @@ p.text {
 
 p.text span {
   color: #6feaf6;
-}
+} 
 </style>

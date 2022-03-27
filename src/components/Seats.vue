@@ -230,6 +230,18 @@ export default {
 
 
 <style scoped>
+body {
+  background-color: #242333;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+	padding:0; /*yeni*/ 
+}
 .seat {
   background-color: rgb(141, 35, 35); /* #444451; */
   height: 20px; /*12px */
