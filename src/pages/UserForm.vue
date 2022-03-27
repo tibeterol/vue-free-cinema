@@ -4,7 +4,7 @@
  </div>
  <div class="card"> 
  <div class="container">
-  <form action="/action_page.php">
+  <form >
     <div class="row">
       <div class="col-25">
         <label for="fname">First Name</label>

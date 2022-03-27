@@ -1,24 +1,16 @@
 <template>
 <the-header></the-header>
-<get-ticket v-if="1===2"></get-ticket>
-<user-form></user-form>
-<select-movie v-if="1===2"></select-movie>
+<router-view></router-view>
 <the-footer></the-footer>
 </template>
 
 <script>
 import TheHeader from './components/layout/TheHeader.vue';
-import GetTicket from './pages/GetTicket.vue';
 import TheFooter from './components/layout/TheFooter.vue';
-import SelectMovie from './pages/SelectMovie.vue';
-import UserForm from './pages/UserForm.vue';
 export default {
   components : {
     TheHeader,
-    GetTicket,
-    TheFooter,
-    SelectMovie,
-    UserForm
+    TheFooter
   }
 }
 </script>

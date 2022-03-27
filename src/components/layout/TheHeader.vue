@@ -7,10 +7,10 @@
 				<h1><a href="#">Free<span>Cinema</span></a></h1>
 
 				<nav>
-					<a href="#">Movies</a>
-					<a href="#">Form</a>
-					<a href="#" class="selected">Get Ticket</a>
-					<a href="#">Admin Login</a>
+					<router-link to="/movies">Movies</router-link>
+					<router-link to="/form">Form</router-link>
+					<router-link to="/ticket">Get Ticket</router-link>
+					<router-link to="/movies">Admin Login</router-link>
 				</nav>
 			</div>
 
