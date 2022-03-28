@@ -3,20 +3,31 @@
  <div class="text">
      <h3>Select A Movie</h3>
  </div>
-    <div class="card">
+    <div class="card" @click="selectMovie('batman')">
         <img src="https://www.timeturk.com/resim/detay/172/1725669.jpg" />
         <p>The Batman</p>   
     </div>
-        <div class="card">
+        <div class="card" @click="selectMovie('kolpacino')" >
         <img src="https://img3.aksam.com.tr/imgsdisk/2020/08/26/t25_260820208b91305d.jpg" />
         <p>Kolpaçino Bomba</p>   
     </div>
-        <div class="card">
+        <div class="card" @click="selectMovie('lastSamurai')">
         <img 
         src="https://hbomax-images.warnermediacdn.com/images/GXt52SQuo_sJHjQEAAAs3/tileburnedin?size=1280x720&partner=hbomaxcom&v=d9bab10c62791dc7eae5456fb5f0bebb&host=artist.api.cdn.hbo.com&w=1280" />
         <p>The Last Samurai</p>   
     </div>
 </template>
+
+<script>
+export default {
+    methods : {
+     selectMovie(name){
+         this.$store.dispatch('chooseMovie',name);
+         this.$router.replace('/form');
+     }
+    }
+}
+</script>
 
 
 <style scoped>

@@ -4,13 +4,13 @@
  </div>
  <div class="card"> 
  <div class="container">
-  <form >
+  <form @submit.prevent="submitForm">
     <div class="row">
       <div class="col-25">
         <label for="fname">First Name</label>
       </div>
       <div class="col-75">
-        <input type="text" id="fname" name="firstname" placeholder="Your name">
+        <input type="text" id="fname" name="firstname" placeholder="Your name" v-model.trim="firstName" @blur="clearMessage">
       </div>
     </div>
     <div class="row">
@@ -18,7 +18,7 @@
         <label for="lname">Last Name</label>
       </div>
       <div class="col-75">
-        <input type="text" id="lname" name="lastname" placeholder="Your last name">
+        <input type="text" id="lname" name="lastname" placeholder="Your last name" v-model.trim="lastName" @blur="clearMessage">
       </div>
     </div>
     <div class="row">
@@ -26,8 +26,8 @@
         <label for="country">Selected Movie</label>
       </div>
       <div class="col-75">
-        <select id="country" name="country">
-          <option value="batman">The Batman</option>
+        <select id="country" name="country" v-model.trim="selectedMovie" @blur="clearMessage">
+          <option value="batman" >The Batman</option>
           <option value="kolpacino">Kolpaçino Bomba</option>
           <option value="lastSamurai">The Last Samurai</option>
         </select>
@@ -38,9 +38,10 @@
         <label for="lname">Your email</label>
       </div>
       <div class="col-75">
-        <input type="email" id="email" name="email" placeholder="Your email">
+        <input type="email" id="email" name="email" placeholder="Your email" v-model.trim="email" @blur="clearMessage">
       </div>
     </div>
+    <p id="error-text" v-if="!isValid">Please fill all the fields correctly.</p>
     <div class="row">
         <button class="button-submit">Submit Changes</button>
     </div>
@@ -49,6 +50,42 @@
 
 </div>
 </template>
+
+<script>
+export default {
+  data(){
+    return {
+      firstName : '',
+      lastName : '',
+      email : '',
+      selectedMovie : '',
+      isValid : true
+    }
+  },
+  mounted(){
+    this.selectedMovie = this.$store.getters.chosenMovie;
+  },
+  methods : {
+    clearMessage(){
+      this.isValid = true;
+    },
+    submitForm(){
+      if(this.firstName ===''||this.lastName ===''|| this.email==='' || this.selectedMovie===''){ 
+      this.isValid = false;
+      return;
+      }
+      this.$store.dispatch('submitForm',{firstName : this.firstName,
+      lastName : this.lastName,email : this.email,selectedMovie : this.selectedMovie});
+      this.$router.replace('/ticket');
+    }
+  }
+}
+</script>
+
+
+
+
+
 
 <style scoped>
 #text {
@@ -159,5 +196,8 @@ input[type=submit]:hover {
   background-color: #3e8e41;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
+}
+#error-text{
+  color : red;
 }
 </style>

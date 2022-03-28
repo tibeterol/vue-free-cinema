@@ -1,6 +1,6 @@
 <template>
     
-		<header class="header-basic">
+		<header class="header-basic" @click="goHome">
 
 			<div class="header-limiter">
 
@@ -8,14 +8,22 @@
 
 				<nav>
 					<router-link to="/movies">Movies</router-link>
-					<router-link to="/form">Form</router-link>
-					<router-link to="/ticket">Get Ticket</router-link>
 					<router-link to="/movies">Admin Login</router-link>
 				</nav>
 			</div>
 
 		</header>
 </template>
+<script>
+export default {
+	methods : {
+		goHome(){
+			this.$router.replace('/movies');
+		}
+	}
+}
+</script>
+
 <style scoped>
 .header-basic {
 	background-color: #292c2f;

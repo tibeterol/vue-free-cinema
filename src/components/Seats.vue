@@ -14,8 +14,8 @@
         <div class="seat" @click="selectSeat('B1')" :class="{'selected' : isSeatB1Selected}">1</div>
         <div class="seat" @click="selectSeat('B2')" :class="{'selected' : isSeatB2Selected}">2</div>
         <div class="seat" @click="selectSeat('B3')" :class="{'selected' : isSeatB3Selected}">3</div>
-        <div class="seat occupied" @click="selectSeat('B4')" :class="{'selected' : isSeatB4Selected}">4</div>
-        <div class="seat occupied" @click="selectSeat('B5')" :class="{'selected' : isSeatB5Selected}">5</div>
+        <div class="seat" @click="selectSeat('B4')" :class="{'selected' : isSeatB4Selected}">4</div>
+        <div class="seat" @click="selectSeat('B5')" :class="{'selected' : isSeatB5Selected}">5</div>
         <div class="seat" @click="selectSeat('B6')" :class="{'selected' : isSeatB6Selected}">6</div>
         <div class="seat" @click="selectSeat('B7')" :class="{'selected' : isSeatB7Selected}">7</div>
         <div class="seat" @click="selectSeat('B8')" :class="{'selected' : isSeatB8Selected}">8</div>
@@ -28,8 +28,8 @@
         <div class="seat" @click="selectSeat('C4')" :class="{'selected' : isSeatC4Selected}">4</div>
         <div class="seat" @click="selectSeat('C5')" :class="{'selected' : isSeatC5Selected}">5</div>
         <div class="seat" @click="selectSeat('C6')" :class="{'selected' : isSeatC6Selected}">6</div>
-        <div class="seat occupied" @click="selectSeat('C7')" :class="{'selected' : isSeatC7Selected}">7</div>
-        <div class="seat occupied" @click="selectSeat('C8')" :class="{'selected' : isSeatC8Selected}">8</div>
+        <div class="seat" @click="selectSeat('C7')" :class="{'selected' : isSeatC7Selected}">7</div>
+        <div class="seat" @click="selectSeat('C8')" :class="{'selected' : isSeatC8Selected}">8</div>
         <span id="alphabets">C</span>   
       </div>
       <div class="row">
@@ -47,8 +47,8 @@
         <div class="seat" @click="selectSeat('E1')" :class="{'selected' : isSeatE1Selected}">1</div>
         <div class="seat" @click="selectSeat('E2')" :class="{'selected' : isSeatE2Selected}">2</div>
         <div class="seat" @click="selectSeat('E3')" :class="{'selected' : isSeatE3Selected}">3</div>
-        <div class="seat occupied" @click="selectSeat('E4')" :class="{'selected' : isSeatE4Selected}">4</div>
-        <div class="seat occupied" @click="selectSeat('E5')" :class="{'selected' : isSeatE5Selected}">5</div>
+        <div class="seat" @click="selectSeat('E4')" :class="{'selected' : isSeatE4Selected}">4</div>
+        <div class="seat" @click="selectSeat('E5')" :class="{'selected' : isSeatE5Selected}">5</div>
         <div class="seat" @click="selectSeat('E6')" :class="{'selected' : isSeatE6Selected}">6</div>
         <div class="seat" @click="selectSeat('E7')" :class="{'selected' : isSeatE7Selected}">7</div>
         <div class="seat" @click="selectSeat('E8')" :class="{'selected' : isSeatE8Selected}">8</div>
@@ -59,9 +59,9 @@
         <div class="seat" @click="selectSeat('F2')" :class="{'selected' : isSeatF2Selected}">2</div>
         <div class="seat" @click="selectSeat('F3')" :class="{'selected' : isSeatF3Selected}">3</div>
         <div class="seat" @click="selectSeat('F4')" :class="{'selected' : isSeatF4Selected}">4</div>
-        <div class="seat occupied" @click="selectSeat('F5')" :class="{'selected' : isSeatF5Selected}">5</div>
-        <div class="seat occupied" @click="selectSeat('F6')" :class="{'selected' : isSeatF6Selected}">6</div>
-        <div class="seat occupied" @click="selectSeat('F7')" :class="{'selected' : isSeatF7Selected}">7</div>
+        <div class="seat" @click="selectSeat('F5')" :class="{'selected' : isSeatF5Selected}">5</div>
+        <div class="seat" @click="selectSeat('F6')" :class="{'selected' : isSeatF6Selected}">6</div>
+        <div class="seat" @click="selectSeat('F7')" :class="{'selected' : isSeatF7Selected}">7</div>
         <div class="seat" @click="selectSeat('F8')" :class="{'selected' : isSeatF8Selected}">8</div>
         <span id="alphabets">F</span>   
       </div>
@@ -69,9 +69,10 @@
 
 <script>
 export default {
+  emits : ['seat-counter'],
     data(){
         return {
-            seatIds : [], // sonra vuexe tasi
+            seatIds : [], 
             isSeatA1Selected: false,
             isSeatA2Selected: false,
             isSeatA3Selected: false,
@@ -126,11 +127,15 @@ export default {
         selectSeat(idx){
             if(!this.seatIds.includes(idx)){
               this.seatIds.push(idx);
+              this.$store.dispatch('addSelectedSeats',idx);
             }
             else{
               this.seatIds = this.seatIds.filter(s=>s!==idx);
+              this.$store.dispatch('setSelectedSeats',idx);
             }
-            console.log(this.seatIds);
+            //console.log(this.seatIds);
+            console.log(this.$store.getters.getSelectedSeats);
+            this.$emit('seat-counter',this.seatIds.length);
             if(idx ==='A1')
             this.isSeatA1Selected = !this.isSeatA1Selected;
             if(idx ==='A2')

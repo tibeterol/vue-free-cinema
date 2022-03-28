@@ -5,6 +5,12 @@
 </template>
 
 <style scoped> 
+a,a:active {
+    text-decoration: none;
+}
+a:active{
+    color : green;
+}
 *{
     box-sizing: border-box;
     margin: 0;

@@ -5,22 +5,17 @@
     <div id="ticket-container"> 
   <div class="movie-container">
       <label>Selected movie : </label>
-      <select id="movie">
-        <option value="10">Avengers: Endgame ($10)</option>
-        <option value="12">Joker ($12)</option>
-        <option value="8">Toy Story 4 ($8)</option>
-        <option value="9">The Lion King ($9)</option>
-      </select>
+      <input id="movie" disabled  :value="selectedMovie" />
     </div>
 
   <seat-information></seat-information>
     <div class="container">
      <screen></screen>
-     <seats></seats>
+     <seats @seat-counter="setCounter"></seats>
     </div>
 
     <p class="text">
-      You have selected <span id="count">0</span> seats.
+      You have selected <span id="count">{{seatCounter}}</span> seats.
     </p>
 </div>
 </template>
@@ -33,9 +28,39 @@ export default {
     SeatInformation,
     Screen,
     Seats
+    },
+    mounted(){
+      const movieName = this.$store.getters.chosenMovie;
+      if(movieName ==='kolpacino')
+      this.selectedMovie = 'Kolpaçino Bomba';
+      else if(movieName ==='batman')
+      this.selectedMovie = 'The Batman';
+      else if(movieName ==='lastSamurai')
+      this.selectedMovie = 'The Last Samurai';
+    },
+    data(){
+      return {
+        selectedMovie : '',
+        counter : '0'
+      }
+    },
+    methods: {
+      setCounter(cnt){
+        this.counter = cnt;
+      }
+    },
+    computed : {
+      seatCounter(){
+        //return this.$store.getters.seatCounter;
+        return this.counter;
+      }
     }
 }
 </script>
+
+
+
+
 
 <style scoped>
 #ticket-container{
