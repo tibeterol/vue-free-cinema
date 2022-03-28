@@ -17,6 +17,10 @@
     <p class="text">
       You have selected <span id="count">{{seatCounter}}</span> seats.
     </p>
+     <p class="text">
+      Selected seats are : <span id="count">{{selectedSeats}}</span>
+    </p>
+    <button @click="save" id="approve">Approve</button>
 </div>
 </template>
 <script>
@@ -44,15 +48,24 @@ export default {
         counter : '0'
       }
     },
+    created(){
+    window.scroll(0,0);
+    },
     methods: {
       setCounter(cnt){
         this.counter = cnt;
+      },
+      save(){
+        alert("saved"); //duzenlenecek
       }
     },
     computed : {
       seatCounter(){
         //return this.$store.getters.seatCounter;
         return this.counter;
+      },
+      selectedSeats(){
+        return this.$store.getters.getSelectedSeats;
       }
     }
 }
@@ -63,6 +76,22 @@ export default {
 
 
 <style scoped>
+#approve {
+  margin-top : 2%;
+   background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 10px;
+}
+#approve:hover{
+  cursor : pointer;
+  background-color : rgb(94, 148, 14);
+}
 #ticket-container{
     background-color: #242333;
   color: #fff;

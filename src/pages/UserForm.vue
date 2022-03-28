@@ -65,6 +65,9 @@ export default {
   mounted(){
     this.selectedMovie = this.$store.getters.chosenMovie;
   },
+  created(){
+    window.scroll(0,0);
+  },
   methods : {
     clearMessage(){
       this.isValid = true;
