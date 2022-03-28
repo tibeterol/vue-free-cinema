@@ -114,4 +114,9 @@ p.text span {
   border-radius: 10px;
   box-shadow: 3px 5px #888888;
 }
+h3 {
+    color : black;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 </style>

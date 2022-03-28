@@ -200,4 +200,9 @@ input[type=submit]:hover {
 #error-text{
   color : red;
 }
+h3 {
+    color : black;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 </style>
