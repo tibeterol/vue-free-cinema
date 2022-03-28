@@ -9,6 +9,10 @@ const store = createStore({
                 email : '',
                 selectedMovie : '',
                 selectedSeats : []
+            },
+            admin : {
+                userName : 'admin',
+                password : '123'
             }
         }
     },
@@ -27,6 +31,9 @@ const store = createStore({
         },
         setSelectedSeats(state,payload){
             state.user.selectedSeats = state.user.selectedSeats.filter(s=>s!==payload);
+        },
+        clearSeats(state,payload){
+            state.user.selectedSeats = payload;
         }
     },
     actions : {
@@ -41,6 +48,9 @@ const store = createStore({
         },
         setSelectedSeats(context,payload){
             context.commit('setSelectedSeats',payload);
+        },
+        clearSeats(context){
+            context.commit('clearSeats',[]);
         }
     },
     getters : {
@@ -52,6 +62,12 @@ const store = createStore({
         },
         getSelectedSeats(state){
             return state.user.selectedSeats;
+        },
+        getAdminUserName(state){
+            return state.admin.userName;
+        },
+        getAdminPassword(state){
+            return state.admin.password;
         }
     }
 

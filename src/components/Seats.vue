@@ -1,69 +1,72 @@
 <template>
      <div class="row">
-        <div class="seat" @click="selectSeat('A1')" :class="{'selected' : isSeatA1Selected}">1</div>
-        <div class="seat" @click="selectSeat('A2')" :class="{'selected' : isSeatA2Selected}">2</div>
-        <div class="seat" @click="selectSeat('A3')" :class="{'selected' : isSeatA3Selected}">3</div>
-        <div class="seat" @click="selectSeat('A4')" :class="{'selected' : isSeatA4Selected}">4</div>
-        <div class="seat" @click="selectSeat('A5')" :class="{'selected' : isSeatA5Selected}">5</div>
-        <div class="seat" @click="selectSeat('A6')" :class="{'selected' : isSeatA6Selected}">6</div>
-        <div class="seat" @click="selectSeat('A7')" :class="{'selected' : isSeatA7Selected}">7</div>
-        <div class="seat" @click="selectSeat('A8')" :class="{'selected' : isSeatA8Selected}">8</div>
+        <div class="seat" @click="selectSeat('A1')" :class="{'selected' : isSeatA1Selected,'occupied' : isSeatA1Reserved}">1</div>
+        <div class="seat" @click="selectSeat('A2')" :class="{'selected' : isSeatA2Selected,'occupied' : isSeatA2Reserved}">2</div>
+        <div class="seat" @click="selectSeat('A3')" :class="{'selected' : isSeatA3Selected,'occupied' : isSeatA3Reserved}">3</div>
+        <div class="seat" @click="selectSeat('A4')" :class="{'selected' : isSeatA4Selected,'occupied' : isSeatA4Reserved}">4</div>
+        <div class="seat" @click="selectSeat('A5')" :class="{'selected' : isSeatA5Selected,'occupied' : isSeatA5Reserved}">5</div>
+        <div class="seat" @click="selectSeat('A6')" :class="{'selected' : isSeatA6Selected,'occupied' : isSeatA6Reserved}">6</div>
+        <div class="seat" @click="selectSeat('A7')" :class="{'selected' : isSeatA7Selected,'occupied' : isSeatA7Reserved}">7</div>
+        <div class="seat" @click="selectSeat('A8')" :class="{'selected' : isSeatA8Selected,'occupied' : isSeatA8Reserved}">8</div>
         <span id="alphabets">A</span>   
       </div>
       <div class="row">
-        <div class="seat" @click="selectSeat('B1')" :class="{'selected' : isSeatB1Selected}">1</div>
-        <div class="seat" @click="selectSeat('B2')" :class="{'selected' : isSeatB2Selected}">2</div>
-        <div class="seat" @click="selectSeat('B3')" :class="{'selected' : isSeatB3Selected}">3</div>
-        <div class="seat" @click="selectSeat('B4')" :class="{'selected' : isSeatB4Selected}">4</div>
-        <div class="seat" @click="selectSeat('B5')" :class="{'selected' : isSeatB5Selected}">5</div>
-        <div class="seat" @click="selectSeat('B6')" :class="{'selected' : isSeatB6Selected}">6</div>
-        <div class="seat" @click="selectSeat('B7')" :class="{'selected' : isSeatB7Selected}">7</div>
-        <div class="seat" @click="selectSeat('B8')" :class="{'selected' : isSeatB8Selected}">8</div>
+        <div class="seat" @click="selectSeat('B1')" :class="{'selected' : isSeatB1Selected,'occupied' : isSeatB1Reserved}">1</div>
+        <div class="seat" @click="selectSeat('B2')" :class="{'selected' : isSeatB2Selected,'occupied' : isSeatB2Reserved}">2</div>
+        <div class="seat" @click="selectSeat('B3')" :class="{'selected' : isSeatB3Selected,'occupied' : isSeatB3Reserved}">3</div>
+        <div class="seat" @click="selectSeat('B4')" :class="{'selected' : isSeatB4Selected,'occupied' : isSeatB4Reserved}">4</div>
+        <div class="seat" @click="selectSeat('B5')" :class="{'selected' : isSeatB5Selected,'occupied' : isSeatB5Reserved}">5</div>
+        <div class="seat" @click="selectSeat('B6')" :class="{'selected' : isSeatB6Selected,'occupied' : isSeatB6Reserved}">6</div>
+        <div class="seat" @click="selectSeat('B7')" :class="{'selected' : isSeatB7Selected,'occupied' : isSeatB7Reserved}">7</div>
+        <div class="seat" @click="selectSeat('B8')" :class="{'selected' : isSeatB8Selected,'occupied' : isSeatB8Reserved}">8</div>
         <span id="alphabets">B</span>   
       </div>
       <div class="row">
-        <div class="seat" @click="selectSeat('C1')" :class="{'selected' : isSeatC1Selected}">1</div>
-        <div class="seat" @click="selectSeat('C2')" :class="{'selected' : isSeatC2Selected}">2</div>
-        <div class="seat" @click="selectSeat('C3')" :class="{'selected' : isSeatC3Selected}">3</div>
-        <div class="seat" @click="selectSeat('C4')" :class="{'selected' : isSeatC4Selected}">4</div>
-        <div class="seat" @click="selectSeat('C5')" :class="{'selected' : isSeatC5Selected}">5</div>
-        <div class="seat" @click="selectSeat('C6')" :class="{'selected' : isSeatC6Selected}">6</div>
-        <div class="seat" @click="selectSeat('C7')" :class="{'selected' : isSeatC7Selected}">7</div>
-        <div class="seat" @click="selectSeat('C8')" :class="{'selected' : isSeatC8Selected}">8</div>
+        <div class="seat" @click="selectSeat('C1')" :class="{'selected' : isSeatC1Selected,'occupied' : isSeatC1Reserved}">1</div>
+        <div class="seat" @click="selectSeat('C2')" :class="{'selected' : isSeatC2Selected,'occupied' : isSeatC2Reserved}">2</div>
+        <div class="seat" @click="selectSeat('C3')" :class="{'selected' : isSeatC3Selected,'occupied' : isSeatC3Reserved}">3</div>
+        <div class="seat" @click="selectSeat('C4')" :class="{'selected' : isSeatC4Selected,'occupied' : isSeatC4Reserved}">4</div>
+        <div class="seat" @click="selectSeat('C5')" :class="{'selected' : isSeatC5Selected,'occupied' : isSeatC5Reserved}">5</div>
+        <div class="seat" @click="selectSeat('C6')" :class="{'selected' : isSeatC6Selected,'occupied' : isSeatC6Reserved}">6</div>
+        <div class="seat" @click="selectSeat('C7')" :class="{'selected' : isSeatC7Selected,'occupied' : isSeatC7Reserved}">7</div>
+        <div class="seat" @click="selectSeat('C8')" :class="{'selected' : isSeatC8Selected,'occupied' : isSeatC8Reserved}">8</div>
         <span id="alphabets">C</span>   
       </div>
       <div class="row">
-        <div class="seat" @click="selectSeat('D1')" :class="{'selected' : isSeatD1Selected}">1</div>
-        <div class="seat" @click="selectSeat('D2')" :class="{'selected' : isSeatD2Selected}">2</div>
-        <div class="seat" @click="selectSeat('D3')" :class="{'selected' : isSeatD3Selected}">3</div>
-        <div class="seat" @click="selectSeat('D4')" :class="{'selected' : isSeatD4Selected}">4</div>
-        <div class="seat" @click="selectSeat('D5')" :class="{'selected' : isSeatD5Selected}">5</div>
-        <div class="seat" @click="selectSeat('D6')" :class="{'selected' : isSeatD6Selected}">6</div>
-        <div class="seat" @click="selectSeat('D7')" :class="{'selected' : isSeatD7Selected}">7</div>
-        <div class="seat" @click="selectSeat('D8')" :class="{'selected' : isSeatD8Selected}">8</div>
+        <div class="seat" @click="selectSeat('D1')" :class="{'selected' : isSeatD1Selected,'occupied' : isSeatD1Reserved}">1</div>
+        <div class="seat" @click="selectSeat('D2')" :class="{'selected' : isSeatD2Selected,'occupied' : isSeatD2Reserved}">2</div>
+        <div class="seat" @click="selectSeat('D3')" :class="{'selected' : isSeatD3Selected,'occupied' : isSeatD3Reserved}">3</div>
+        <div class="seat" @click="selectSeat('D4')" :class="{'selected' : isSeatD4Selected,'occupied' : isSeatD4Reserved}">4</div>
+        <div class="seat" @click="selectSeat('D5')" :class="{'selected' : isSeatD5Selected,'occupied' : isSeatD5Reserved}">5</div>
+        <div class="seat" @click="selectSeat('D6')" :class="{'selected' : isSeatD6Selected,'occupied' : isSeatD6Reserved}">6</div>
+        <div class="seat" @click="selectSeat('D7')" :class="{'selected' : isSeatD7Selected,'occupied' : isSeatD7Reserved}">7</div>
+        <div class="seat" @click="selectSeat('D8')" :class="{'selected' : isSeatD8Selected,'occupied' : isSeatD8Reserved}">8</div>
         <span id="alphabets">D</span>   
       </div>
       <div class="row">
-        <div class="seat" @click="selectSeat('E1')" :class="{'selected' : isSeatE1Selected}">1</div>
-        <div class="seat" @click="selectSeat('E2')" :class="{'selected' : isSeatE2Selected}">2</div>
-        <div class="seat" @click="selectSeat('E3')" :class="{'selected' : isSeatE3Selected}">3</div>
-        <div class="seat" @click="selectSeat('E4')" :class="{'selected' : isSeatE4Selected}">4</div>
-        <div class="seat" @click="selectSeat('E5')" :class="{'selected' : isSeatE5Selected}">5</div>
-        <div class="seat" @click="selectSeat('E6')" :class="{'selected' : isSeatE6Selected}">6</div>
-        <div class="seat" @click="selectSeat('E7')" :class="{'selected' : isSeatE7Selected}">7</div>
-        <div class="seat" @click="selectSeat('E8')" :class="{'selected' : isSeatE8Selected}">8</div>
+        <div class="seat" @click="selectSeat('E1')" :class="{'selected' : isSeatE1Selected,'occupied' : isSeatE1Reserved}">1</div>
+        <div class="seat" @click="selectSeat('E2')" :class="{'selected' : isSeatE2Selected,'occupied' : isSeatE2Reserved}">2</div>
+        <div class="seat" @click="selectSeat('E3')" :class="{'selected' : isSeatE3Selected,'occupied' : isSeatE3Reserved}">3</div>
+        <div class="seat" @click="selectSeat('E4')" :class="{'selected' : isSeatE4Selected,'occupied' : isSeatE4Reserved}">4</div>
+        <div class="seat" @click="selectSeat('E5')" :class="{'selected' : isSeatE5Selected,'occupied' : isSeatE5Reserved}">5</div>
+        <div class="seat" @click="selectSeat('E6')" :class="{'selected' : isSeatE6Selected,'occupied' : isSeatE6Reserved}">6</div>
+        <div class="seat" @click="selectSeat('E7')" :class="{'selected' : isSeatE7Selected,'occupied' : isSeatE7Reserved}">7</div>
+        <div class="seat" @click="selectSeat('E8')" :class="{'selected' : isSeatE8Selected,'occupied' : isSeatE8Reserved}">8</div>
         <span id="alphabets">E</span>   
       </div>
       <div class="row">
-        <div class="seat" @click="selectSeat('F1')" :class="{'selected' : isSeatF1Selected}">1</div>
-        <div class="seat" @click="selectSeat('F2')" :class="{'selected' : isSeatF2Selected}">2</div>
-        <div class="seat" @click="selectSeat('F3')" :class="{'selected' : isSeatF3Selected}">3</div>
-        <div class="seat" @click="selectSeat('F4')" :class="{'selected' : isSeatF4Selected}">4</div>
-        <div class="seat" @click="selectSeat('F5')" :class="{'selected' : isSeatF5Selected}">5</div>
-        <div class="seat" @click="selectSeat('F6')" :class="{'selected' : isSeatF6Selected}">6</div>
-        <div class="seat" @click="selectSeat('F7')" :class="{'selected' : isSeatF7Selected}">7</div>
-        <div class="seat" @click="selectSeat('F8')" :class="{'selected' : isSeatF8Selected}">8</div>
+        <div class="seat" @click="selectSeat('F1')" :class="{'selected' : isSeatF1Selected,'occupied' : isSeatF1Reserved}">1</div>
+        <div class="seat" @click="selectSeat('F2')" :class="{'selected' : isSeatF2Selected,'occupied' : isSeatF2Reserved}">2</div>
+        <div class="seat" @click="selectSeat('F3')" :class="{'selected' : isSeatF3Selected,'occupied' : isSeatF3Reserved}">3</div>
+        <div class="seat" @click="selectSeat('F4')" :class="{'selected' : isSeatF4Selected,'occupied' : isSeatF4Reserved}">4</div>
+        <div class="seat" @click="selectSeat('F5')" :class="{'selected' : isSeatF5Selected,'occupied' : isSeatF5Reserved}">5</div>
+        <div class="seat" @click="selectSeat('F6')" :class="{'selected' : isSeatF6Selected,'occupied' : isSeatF6Reserved}">6</div>
+        <div class="seat" @click="selectSeat('F7')" :class="{'selected' : isSeatF7Selected,'occupied' : isSeatF7Reserved}">7</div>
+        <div class="seat" @click="selectSeat('F8')" :class="{'selected' : isSeatF8Selected,'occupied' : isSeatF8Reserved}">8</div>
         <span id="alphabets">F</span>   
+      </div>
+      <div>
+        <button @click="save" id="approve">Approve</button>
       </div>
 </template>
 
@@ -72,6 +75,7 @@ export default {
   emits : ['seat-counter'],
     data(){
         return {
+            //isDataSaved : false,
             seatIds : [], 
             isSeatA1Selected: false,
             isSeatA2Selected: false,
@@ -121,9 +125,170 @@ export default {
             isSeatF6Selected: false,
             isSeatF7Selected: false,
             isSeatF8Selected: false,
+            //
+            isSeatA1Reserved: false,
+            isSeatA2Reserved: false,
+            isSeatA3Reserved: false,
+            isSeatA4Reserved: false,
+            isSeatA5Reserved: false,
+            isSeatA6Reserved: false,
+            isSeatA7Reserved: false,
+            isSeatA8Reserved: false,
+            isSeatB1Reserved: false,
+            isSeatB2Reserved: false,
+            isSeatB3Reserved: false,
+            isSeatB4Reserved: false,
+            isSeatB5Reserved: false,
+            isSeatB6Reserved: false,
+            isSeatB7Reserved: false,
+            isSeatB8Reserved: false,
+            isSeatC1Reserved: false,
+            isSeatC2Reserved: false,
+            isSeatC3Reserved: false,
+            isSeatC4Reserved: false,
+            isSeatC5Reserved: false,
+            isSeatC6Reserved: false,
+            isSeatC7Reserved: false,
+            isSeatC8Reserved: false,
+            isSeatD1Reserved: false,
+            isSeatD2Reserved: false,
+            isSeatD3Reserved: false,
+            isSeatD4Reserved: false,
+            isSeatD5Reserved: false,
+            isSeatD6Reserved: false,
+            isSeatD7Reserved: false,
+            isSeatD8Reserved: false,
+            isSeatE1Reserved: false,
+            isSeatE2Reserved: false,
+            isSeatE3Reserved: false,
+            isSeatE4Reserved: false,
+            isSeatE5Reserved: false,
+            isSeatE6Reserved: false,
+            isSeatE7Reserved: false,
+            isSeatE8Reserved: false,
+            isSeatF1Reserved: false,
+            isSeatF2Reserved: false,
+            isSeatF3Reserved: false,
+            isSeatF4Reserved: false,
+            isSeatF5Reserved: false,
+            isSeatF6Reserved: false,
+            isSeatF7Reserved: false,
+            isSeatF8Reserved: false
         }
     },
     methods : {
+       save(){
+         if(this.seatIds.length ===0){
+           return;
+         }
+         for(let s =0 ;s<this.seatIds.length;s++){
+           if(this.seatIds[s]==='A1')
+           this.isSeatA1Reserved=true;
+           if(this.seatIds[s]==='A2')
+           this.isSeatA2Reserved=true;
+           if(this.seatIds[s]==='A3')
+           this.isSeatA3Reserved=true;
+           if(this.seatIds[s]==='A4')
+           this.isSeatA4Reserved=true;
+           if(this.seatIds[s]==='A5')
+           this.isSeatA5Reserved=true;
+           if(this.seatIds[s]==='A6')
+           this.isSeatA6Reserved=true;
+           if(this.seatIds[s]==='A7')
+           this.isSeatA7Reserved=true;
+           if(this.seatIds[s]==='A8')
+           this.isSeatA8Reserved=true;
+           if(this.seatIds[s]==='B1')
+           this.isSeatB1Reserved=true;
+           if(this.seatIds[s]==='B2')
+           this.isSeatB2Reserved=true;
+           if(this.seatIds[s]==='B3')
+           this.isSeatB3Reserved=true;
+           if(this.seatIds[s]==='B4')
+           this.isSeatB4Reserved=true;
+           if(this.seatIds[s]==='B5')
+           this.isSeatB5Reserved=true;
+           if(this.seatIds[s]==='B6')
+           this.isSeatB6Reserved=true;
+           if(this.seatIds[s]==='B7')
+           this.isSeatB7Reserved=true;
+           if(this.seatIds[s]==='B8')
+           this.isSeatB8Reserved=true;
+           if(this.seatIds[s]==='C1')
+           this.isSeatC1Reserved=true;
+           if(this.seatIds[s]==='C2')
+           this.isSeatC2Reserved=true;
+           if(this.seatIds[s]==='C3')
+           this.isSeatC3Reserved=true;
+           if(this.seatIds[s]==='C4')
+           this.isSeatC4Reserved=true;
+           if(this.seatIds[s]==='C5')
+           this.isSeatC5Reserved=true;
+           if(this.seatIds[s]==='C6')
+           this.isSeatC6Reserved=true;
+           if(this.seatIds[s]==='C7')
+           this.isSeatC7Reserved=true;
+           if(this.seatIds[s]==='C8')
+           this.isSeatC8Reserved=true;
+           if(this.seatIds[s]==='D1')
+           this.isSeatD1Reserved=true;
+            if(this.seatIds[s]==='D2')
+           this.isSeatD2Reserved=true;
+            if(this.seatIds[s]==='D3')
+           this.isSeatD3Reserved=true;
+            if(this.seatIds[s]==='D4')
+           this.isSeatD4Reserved=true;
+           if(this.seatIds[s]==='D5')
+           this.isSeatD5Reserved=true;
+           if(this.seatIds[s]==='D6')
+           this.isSeatD6Reserved=true;
+            if(this.seatIds[s]==='D7')
+           this.isSeatD7Reserved=true;
+            if(this.seatIds[s]==='D8')
+           this.isSeatD8Reserved=true;
+            if(this.seatIds[s]==='E1')
+           this.isSeatE1Reserved=true;
+            if(this.seatIds[s]==='E2')
+           this.isSeatE2Reserved=true;
+            if(this.seatIds[s]==='E3')
+           this.isSeatE3Reserved=true;
+            if(this.seatIds[s]==='E4')
+           this.isSeatE4Reserved=true;
+            if(this.seatIds[s]==='E5')
+           this.isSeatE5Reserved=true;
+            if(this.seatIds[s]==='E6')
+           this.isSeatE6Reserved=true;
+            if(this.seatIds[s]==='E7')
+           this.isSeatE7Reserved=true;
+            if(this.seatIds[s]==='E8')
+           this.isSeatE8Reserved=true;
+            if(this.seatIds[s]==='F1')
+           this.isSeatF1Reserved=true;
+           if(this.seatIds[s]==='F2')
+           this.isSeatF2Reserved=true;
+           if(this.seatIds[s]==='F3')
+           this.isSeatF3Reserved=true;
+            if(this.seatIds[s]==='F4')
+           this.isSeatF4Reserved=true;
+            if(this.seatIds[s]==='F5')
+           this.isSeatF5Reserved=true;
+           if(this.seatIds[s]==='F6')
+           this.isSeatF6Reserved=true;
+           if(this.seatIds[s]==='F7')
+           this.isSeatF7Reserved=true;
+            if(this.seatIds[s]==='F8')
+           this.isSeatF8Reserved=true;
+
+          //this.isDataSaved = true;
+          setTimeout(()=>{
+            this.seatIds =[];
+            this.$store.dispatch('clearSeats');
+            this.$router.replace('/movies');
+          },3000);
+         }
+        // console.log(seats);
+        //alert("saved"); //duzenlenecek
+        },
         selectSeat(idx){
             if(!this.seatIds.includes(idx)){
               this.seatIds.push(idx);
@@ -134,7 +299,7 @@ export default {
               this.$store.dispatch('setSelectedSeats',idx);
             }
             //console.log(this.seatIds);
-            console.log(this.$store.getters.getSelectedSeats);
+            //console.log(this.$store.getters.getSelectedSeats);
             this.$emit('seat-counter',this.seatIds.length);
             if(idx ==='A1')
             this.isSeatA1Selected = !this.isSeatA1Selected;
@@ -232,14 +397,29 @@ export default {
             this.isSeatF7Selected = !this.isSeatF7Selected;
              if(idx ==='F8')
             this.isSeatF8Selected = !this.isSeatF8Selected;
-
         }
     }
 }
 </script>
 
-
 <style scoped>
+#approve {
+  margin-top : 14%;
+  margin-left : 25%;
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 10px;
+}
+#approve:hover{
+  cursor : pointer;
+  background-color : rgb(94, 148, 14);
+}
 body {
   background-color: #242333;
   color: #fff;
