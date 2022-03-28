@@ -1,16 +1,19 @@
 <template>
 <the-header></the-header>
 <router-view></router-view>
+<BackToTop text="Go To Top" v-if="$route.path==='/movies'" />
 <the-footer></the-footer>
 </template>
 
 <script>
 import TheHeader from './components/layout/TheHeader.vue';
 import TheFooter from './components/layout/TheFooter.vue';
+import BackToTop from 'vue-backtotop';
 export default {
   components : {
     TheHeader,
-    TheFooter
+    TheFooter,
+    BackToTop
   }
 }
 </script>
