@@ -68,6 +68,12 @@ const store = createStore({
         },
         getAdminPassword(state){
             return state.admin.password;
+        },
+        getFullName(state){
+            return state.user.firstName + ' ' + state.user.lastName;
+        },
+        getEmail(state){
+            return state.user.email;
         }
     }
 

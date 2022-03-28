@@ -14,6 +14,13 @@
      <seats @seat-counter="setCounter"></seats>
     </div>
 
+     <p class="text">
+      Your fullname : <span id="count">{{getFullName}}</span>
+    </p>
+        <p class="text">
+      Your email : <span id="count">{{getEmail}}</span>
+    </p>
+
     <p class="text">
       You have selected <span id="count">{{seatCounter}}</span> seats.
     </p>
@@ -44,7 +51,9 @@ export default {
     data(){
       return {
         selectedMovie : '',
-        counter : '0'
+        counter : '0',
+        fullName : '',
+        email : ''
       }
     },
     created(){
@@ -62,7 +71,15 @@ export default {
       },
       selectedSeats(){
         return this.$store.getters.getSelectedSeats;
+      },
+      getFullName(){
+        return this.$store.getters.getFullName;
+      },
+      getEmail(){
+        return this.$store.getters.getEmail;
       }
+
+
     }
 }
 </script>
