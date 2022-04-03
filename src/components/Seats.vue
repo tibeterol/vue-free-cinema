@@ -76,6 +76,7 @@ export default {
     data(){
         return {
             //isDataSaved : false,
+            isApproved : false,
             seatIds : [], 
             isSeatA1Selected: false,
             isSeatA2Selected: false,
@@ -178,6 +179,7 @@ export default {
     },
     methods : {
        save(){
+         this.isApproved = true;
          if(this.seatIds.length ===0){
            return;
          }
@@ -290,6 +292,9 @@ export default {
         //alert("saved"); //duzenlenecek
         },
         selectSeat(idx){
+           if(this.isApproved){
+             return;
+           }
             if(!this.seatIds.includes(idx)){
               this.seatIds.push(idx);
               this.$store.dispatch('addSelectedSeats',idx);
